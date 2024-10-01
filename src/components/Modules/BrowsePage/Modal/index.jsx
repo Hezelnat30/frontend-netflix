@@ -59,7 +59,7 @@ export default function Modal() {
     if (!emailStorage && !tokenStorage) return;
     try {
       setIsSubmit(true);
-      const addMovie = await apiInstanceExpress.post("my-movies", {
+      const addMovie = await apiInstanceExpress.post("/my-movies", {
         email: emailStorage,
         token: tokenStorage,
         data: movieDetail,
@@ -89,7 +89,7 @@ export default function Modal() {
     if (!emailStorage && !tokenStorage) return;
     setIsSubmit(true);
     try {
-      const removeMovie = await apiInstanceExpress.delete("my-movies", {
+      const removeMovie = await apiInstanceExpress.delete("/my-movies", {
         data: {
           email: emailStorage,
           token: tokenStorage,

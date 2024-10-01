@@ -33,7 +33,7 @@ export default function Register() {
       );
       if (register) {
         await signOut(auth);
-        const addUser = await apiInstanceExpress.post("sign-up", {
+        const addUser = await apiInstanceExpress.post("/sign-up", {
           email,
           password,
         });

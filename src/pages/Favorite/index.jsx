@@ -22,7 +22,7 @@ export default function Favorite() {
   const [movieList, setMovieList] = useState([]);
   async function getFavoriteMovies() {
     try {
-      const url = `my-movies/${emailStorage}/${tokenStorage}`;
+      const url = `/my-movies/${emailStorage}/${tokenStorage}`;
       const res = await apiInstanceExpress.get(url);
       if (res.status === 200) return res.data.data;
     } catch (error) {

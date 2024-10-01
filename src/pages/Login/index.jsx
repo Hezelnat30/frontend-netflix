@@ -36,7 +36,7 @@ export default function Login() {
       const login = await signInWithEmailAndPassword(auth, email, password);
       const firebaseToken = await getIdToken(login.user, true);
 
-      const addToken = await apiInstanceExpress.post("my-token", {
+      const addToken = await apiInstanceExpress.post("/my-token", {
         email,
         password,
         token: firebaseToken,

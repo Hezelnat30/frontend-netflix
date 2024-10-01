@@ -12,7 +12,7 @@ export default function AccountMenu() {
 
   async function handleSignOut() {
     const data = { email, token };
-    const dbSignOut = await apiInstanceExpress.delete("my-token", { data });
+    const dbSignOut = await apiInstanceExpress.delete("/my-token", { data });
 
     if (dbSignOut.status === 204) {
       signOut(auth).then(async () => {
@@ -21,7 +21,6 @@ export default function AccountMenu() {
         navigate("/");
       });
     }
-    console.log("berhasil signout");
   }
 
   return (
